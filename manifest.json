@@ -5,5 +5,38 @@
   "chrome_url_overrides" : {
     "newtab": "newtab.html"
   },
-  "permissions": ["storage", "history", "topSites", "tabs"]
+  "permissions": ["storage", "history", "topSites", "tabs", "commands"],
+  "commands": {
+    "open-first-site": {
+      "suggested_key": {
+        "default": "Alt+1",
+        "mac": "Alt+1"
+       },
+      "description": "Open the most used site"
+    },    
+    "open-second-site": {
+      "suggested_key": {
+        "default": "Alt+2",
+        "mac": "Alt+2"
+       },
+      "description": "Open the second most used site"
+    },
+    "open-third-site": {
+      "suggested_key": {
+        "default": "Alt+3",
+        "mac": "Alt+3"
+       },
+      "description": "Open the third most used site"
+    },
+    "open-settings": {
+      "suggested_key": {
+        "default": "Alt+H",
+        "mac": "Alt+H"
+      },
+      "description": "Open settings menu"
+    },
+    "toggle-minimalist": {
+      "description": "Toggle minimalist"
+    }
+  }
 }
