@@ -67,7 +67,6 @@ function updateOrder() {
   });
 }
 
-document.getElementById("container").style.backgroundImage = 'url("https://lp-cms-production.imgix.net/2019-06/12dec8938220093eb7f1fdb8a9ce40b8-the-rocky-mountains.jpg?fit=crop&q=40&sharp=10&vib=20&auto=format&ixlib=react-8.6.4")';
 document.getElementById("input-reminder").addEventListener("keyup", textChanged);
 document.getElementById("settings").addEventListener("click", panel);
 document.getElementById("weather-button").addEventListener("click", setWeather);
@@ -453,6 +452,9 @@ function updateSettings() {
   var isMinimalist = document.getElementById("minimalist").checked;
   chrome.storage.local.set({ minimalist: isMinimalist}, function () {
   });
+  var isDarkmode = document.getElementById("darkmode").checked;
+  chrome.storage.local.set({ darkmode: isDarkmode}, function () {
+  });
 }
 
 chrome.storage.local.get(["minimalist"], function (value) { 
@@ -465,11 +467,20 @@ chrome.storage.local.get(["minimalist"], function (value) {
   }
 });
 
+chrome.storage.local.get(["darkmode"], function (value) { 
+  document.getElementById("darkmode").checked = value.darkmode;
+  if(value.darkmode){
+  toggleDarkmode();
+  }
+});
+
 function updateAllSettings() {
   chrome.storage.local.get(["image"], function (value) {
     if(value.image != undefined){
-      console.log(0)
     document.getElementById("container").style.backgroundImage = `url(${value.image})`;
+    } else {
+      document.getElementById("container").style.backgroundImage = 'url("https://lp-cms-production.imgix.net/2019-06/12dec8938220093eb7f1fdb8a9ce40b8-the-rocky-mountains.jpg?fit=crop&q=40&sharp=10&vib=20&auto=format&ixlib=react-8.6.4")';
+
     }
   });
 }
