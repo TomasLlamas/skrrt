@@ -1,11 +1,17 @@
 {
   "manifest_version": 2,
-  "name": "SpeedTab",
+  "name": "skrrt",
+  "description": "The new tab that makes everything faster.",
   "version": "0.1",
   "chrome_url_overrides" : {
     "newtab": "newtab.html"
   },
-  "permissions": ["storage", "history", "topSites", "tabs", "commands"],
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "permissions": ["storage", "topSites", "tabs", "commands", "https://*/", "http://*/"],
   "commands": {
     "open-first-site": {
       "suggested_key": {

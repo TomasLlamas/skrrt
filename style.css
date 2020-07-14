@@ -21,7 +21,7 @@ body {
 }
 
 .temperature {
-  margin-left: 50px;
+  margin-left: 5vw;
   color: #eee;
   font-size: 2vw;
   font-weight: 300;
@@ -114,7 +114,7 @@ textarea::-webkit-scrollbar-thumb
 }
 
 .header {
-  font-size: 30px;
+  font-size: 1.5vw;
   margin-bottom: 5px;
 }
 
@@ -137,11 +137,11 @@ textarea::-webkit-scrollbar-thumb
 
 .panel {
   padding: 10px;
-  width: 350px;
-  height: 450px;
+  width: 30vw;
+  height: 90vh;
   background-color: white;
   position: absolute;
-  right: -400px;
+  right: -30vw;
   top: 20px;
   border-radius: 5px;
   -webkit-animation: slide 0.5s forwards;
@@ -158,8 +158,8 @@ textarea::-webkit-scrollbar-thumb
 
 .panelPlus {
   padding: 10px;
-  width: 350px;
-  height: 450px;
+  width: 30vw;
+  height: 90vh;
   background-color: white;
   position: absolute;
   right: 20px;
@@ -171,11 +171,11 @@ textarea::-webkit-scrollbar-thumb
 }
 
 @-webkit-keyframes slidePlus {
-  100% { right: -400px; }
+  100% { right: -30vw; }
 }
 
 @keyframes slidePlus {
-  100% { right: -400px; }
+  100% { right: -30vw; }
 }
 
 #weather-button {
@@ -195,7 +195,7 @@ textarea::-webkit-scrollbar-thumb
 }
 
 .label {
-  font-size: 15px;
+  font-size: 1vw;
 }
 
 .option {
@@ -208,7 +208,7 @@ textarea::-webkit-scrollbar-thumb
 #keybind-cont {
   display: flex;
   flex-direction: column;
-  font-size: 15px;
+  font-size: 1vw;
 }
 
 .keybind {
@@ -239,7 +239,7 @@ textarea::-webkit-scrollbar-thumb
 	border-style:solid solid none;
 	border-width:1px 1px medium;
 	color:#444444;
-	font-size:11px;
+	font-size: .85vw;
 	font-weight:bold;
 	white-space:nowrap;
 	display:inline-block;
@@ -254,7 +254,7 @@ textarea::-webkit-scrollbar-thumb
   border-width: 1px;
   border-color: lightgray;
   outline: none;
-  width: 450px;
+  width: 50vw;
   position: fixed;
   top: 50%;
   left: 50%;
@@ -353,27 +353,27 @@ body {
   font-size: 20px;
   /* resize: none; */
   outline: none;
-  height: 390px;
-  width: 300px;
+  height: 70vh;
+  width: 30vw;
 }
 
 #notepad {
-  height: 390px;
+  height: 70vh;
+  width: 30vw;
   background-color: white;
-  width: 300px;
 }
 
 #mostVisited {
   padding: 10px 10px 10px 35px;
-  width: 300px;
   opacity: 0.9;
   border-style: solid;
   border-radius: 5px;
   font-size: 20px;
   border-color: transparent;
   white-space: normal;
-  height: 390px;
-  overflow-y: auto
+  height: 70vh;
+  width: 30vw;
+  overflow-y: auto;
 }
 
 #mostVisited::-webkit-scrollbar-track
@@ -396,42 +396,83 @@ body {
     background-color: #555;
 }
 
-#calendar {
-  padding: 10px 10px 10px 10px;
-  width: 300px;
-  opacity: 0.9;
+#news {
+  height: 70vh;
+  width: 50vw;
+  background-color: transparent;
   border-style: solid;
   border-radius: 5px;
   font-size: 20px;
   border-color: transparent;
   white-space: normal;
-  height: 390px;
+  overflow: auto;
+  text-decoration: none;
 }
+
+#news::-webkit-scrollbar-track
+{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border-radius: 10px;
+    background-color: #F5F5F5;
+}
+
+#news::-webkit-scrollbar
+{
+    width: 5px;
+    background-color: #F5F5F5;
+}
+
+#news::-webkit-scrollbar-thumb
+{
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    background-color: #555;
+}
+
+.article {
+  padding: 10px;
+  margin: 5px;
+  background-color: white;
+  opacity: 0.9;
+  border-style: solid;
+  border-radius: 5px;
+  display: flex;
+  border-color: transparent;
+  color: black;
+}
+
+.article-image {
+  height: 20vh;
+  margin-left: 20px;
+}
+
+.news-link {
+  text-decoration: none;
+}
+
+
+.title {
+  font-size: 1.5vw;
+}
+
 
 
 
 
 #list {
   padding: 10px 10px 10px 10px;
-  width: 300px;
+  height: 70vh;
+  width: 30vw;
   opacity: 0.9;
   border-style: solid;
   border-radius: 5px;
-  font-size: 20px;
+  font-size: 2vw;
   border-color: transparent;
   white-space: normal;
-  height: 390px;
 }
 
 .to-do-container {
   overflow-y: auto;
-}
-
-.app-title {
-  text-align: center;
-  margin-bottom: 20px;
-  font-size: 80px;
-  opacity: 0.5;
 }
 
 svg {
@@ -458,7 +499,7 @@ svg {
   flex-grow: 1;
   margin-left: 10px;
   margin-right: 10px;
-  font-size: 18px;
+  font-size: 1vw;
 }
 
 .done span {
@@ -585,4 +626,10 @@ input:checked + .slider:before {
 
 a {
   color: gray;
+}
+
+#logo {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
 }
